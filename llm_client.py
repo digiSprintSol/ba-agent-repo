@@ -57,9 +57,14 @@ Generate **exactly {batch_size} unique user stories** for the module: "{module_n
 Rules:
 - Derive directly from requirement text for this module.
 - Do not duplicate across batches or modules.
-- Descriptions must be business-focused.
-- Acceptance criteria must be testable.
-- Output strictly JSON with keys: module, title, description, acceptance_criteria.
+- Each story must have:
+  - `module`: logical grouping name
+  - `title`: short and clear
+  - `description`: Persona-driven ("As a <persona>, I want to <goal>, so that <business value>")
+  - `business_description`: a detailed paragraph describing purpose, scope, and behavior
+  - `acceptance_criteria`: minimum 5 detailed Given/When/Then style testable statements
+- Keep descriptions business-focused (not technical).
+- Always output a valid JSON array of objects with these keys only.
 
 Requirement Text:
 {requirement_text}
