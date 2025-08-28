@@ -48,23 +48,15 @@ Requirement:
         return extract_json_from_text(text)
 
 
-def generate_stories(requirement_text: str, module_name: str, batch_size: int, custom_instruction: str = ""):
-    """Step 2: Generate user stories for one module only."""
-    prompt = f"""
-You are a Business Analyst assistant.  
-Generate **exactly {batch_size} unique user stories** for the module: "{module_name}".  
+def load_prompt():
+    with open("prompts/ba_prompt.txt", "r", encoding="utf-8") as f:
+        return f.read()
 
-Rules:
-- Derive directly from requirement text for this module.
-- Do not duplicate across batches or modules.
-- Each story must have:
-  - `module`: logical grouping name
-  - `title`: short and clear
-  - `description`: Persona-driven ("As a <persona>, I want to <goal>, so that <business value>")
-  - `business_description`: a detailed paragraph describing purpose, scope, and behavior
-  - `acceptance_criteria`: minimum 5 detailed Given/When/Then style testable statements
-- Keep descriptions business-focused (not technical).
-- Always output a valid JSON array of objects with these keys only.
+def generate_stories(requirement_text: str, module_name: str, batch_size: int, custom_instruction: str = ""):
+    base_prompt = load_prompt()
+    prompt = f"""{base_prompt}
+
+Generate exactly {batch_size} unique user stories for the module: "{module_name}".
 
 Requirement Text:
 {requirement_text}

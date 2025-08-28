@@ -29,6 +29,7 @@ def make_excel(stories):
             "Description": s.description,
             # Add bullet symbol before each AC
             "Acceptance Criteria": "\n".join([f"• {ac}" for ac in s.acceptance_criteria])
+
         })
     
     df = pd.DataFrame(data)

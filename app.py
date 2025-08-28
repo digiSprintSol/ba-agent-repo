@@ -26,8 +26,17 @@ st.title("📄 BA Agent — Module-wise User Story Generator")
 
 # Sidebar
 with st.sidebar:
-    page_size = st.number_input("Rows per page", min_value=1, max_value=20, value=5)
-    batch_size = st.number_input("Batch size per module", min_value=5, max_value=30, value=10)
+    if "page_size" not in st.session_state:
+        st.session_state.page_size = 5
+    if "batch_size" not in st.session_state:
+        st.session_state.batch_size = 10
+
+    st.session_state.page_size = st.number_input(
+        "Rows per page", min_value=1, max_value=20, value=st.session_state.page_size
+    )
+    st.session_state.batch_size = st.number_input(
+        "Batch size per module", min_value=5, max_value=30, value=st.session_state.batch_size
+    )
 
 # ---- File Upload ----
 uploads = st.file_uploader("Upload requirement files",
@@ -67,7 +76,7 @@ if st.button("Generate Next Batch"):
     else:
         current_module = st.session_state.modules[st.session_state.current_module_index]["module"]
         with st.spinner(f"Generating stories for module: {current_module}..."):
-            data = generate_stories(st.session_state.parsed_text, current_module, batch_size, custom_req)
+            data = generate_stories(st.session_state.parsed_text, current_module, st.session_state.batch_size, custom_req)
 
             new_stories = []
             for item in data:
@@ -118,12 +127,12 @@ if st.session_state.pending_batch:
 if st.session_state.all_stories:
     st.subheader("📑 Approved User Stories")
     total = len(st.session_state.all_stories)
-    total_pages = (total + page_size - 1) // page_size
+    total_pages = (total +  st.session_state.page_size - 1) //  st.session_state.page_size
     current_page = st.session_state.get("page", 0)
 
-    page_items = paginate(st.session_state.all_stories, page_size, current_page)
+    page_items = paginate(st.session_state.all_stories,  st.session_state.page_size, current_page)
     st.table([{
-        "#": i + 1 + current_page * page_size,
+        "#": i + 1 + current_page *  st.session_state.page_size,
         "Module": s.module,
         "Title": s.title,
         "Description": s.description,
