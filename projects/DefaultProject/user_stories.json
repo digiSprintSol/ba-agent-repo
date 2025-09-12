@@ -1,0 +1,123 @@
+[
+  {
+    "module": "User Experience (UX)",
+    "title": "Responsive Design for Mobile Devices",
+    "description": "As a user on a mobile device, I want the e-commerce portal to be fully responsive so that I can easily browse and make purchases on my smartphone or tablet.",
+    "acceptance_criteria": [
+      "Given a user accesses the e-commerce portal on a smartphone, When the page loads, Then the layout adapts to the screen size, ensuring all elements are visible and usable without horizontal scrolling.",
+      "Given a user attempts to interact with a button or form on a mobile device, When the element is touched, Then the action is executed without delay or misclicks.",
+      "Given the portal is accessed on an older mobile device with limited processing power, When the user navigates through the product catalog, Then the page loads within 3 seconds and scrolling is smooth.",
+      "Given a user rotates their tablet from portrait to landscape mode, When the screen orientation changes, Then the content re-aligns seamlessly to fit the new dimensions without loss of functionality.",
+      "Given the mobile user has a slow internet connection, When images and videos load on a product page, Then the loading is progressive to allow text and basic functionality to be accessible immediately."
+    ]
+  },
+  {
+    "module": "User Experience (UX)",
+    "title": "Personalized Product Recommendations",
+    "description": "As a registered user, I want to receive personalized product recommendations based on my browsing and purchase history so that I can quickly find relevant products that I am likely to be interested in.",
+    "acceptance_criteria": [
+      "Given a user has previously purchased welding equipment, When they log into the portal, Then the homepage displays recommendations for related products like safety gear and consumables.",
+      "Given a user frequently browses the 'Steel' category, When they visit the homepage, Then products from that category are prominently featured in the recommendations section.",
+      "Given a new user logs into the portal for the first time, When the homepage loads, Then the recommendations section displays popular products and encourages exploration of different categories.",
+      "Given the system does not have enough data to generate personalized recommendations, When the user browses the site, Then a message indicating \u201cRecommendations will appear here based on your activity\u201d is displayed.",
+      "Given a user has made a purchase of a specific product from a recommendation, When the user returns to the site the next day, Then the recommended products shown should reflect this purchase and be relevant to it.",
+      "Given the recommendation engine fails to retrieve data, When the user logs in, Then an error message is displayed informing the user the recommendation service is temporarily unavailable."
+    ]
+  },
+  {
+    "module": "User Experience (UX)",
+    "title": "AI-Powered Search Suggestions",
+    "description": "As a user, I want to see AI-powered search suggestions as I type so that I can quickly find what I'm looking for without having to type the full search term.",
+    "acceptance_criteria": [
+      "Given a user starts typing \u201csteel pipe\u201d in the search bar, When the third character is entered, Then a dropdown appears with suggestions like \u201csteel pipe 2 inch\u201d, \u201csteel pipe fittings\u201d, and \u201cstainless steel pipe\u201d.",
+      "Given a user misspells a search term like \u201caluinum\u201d, When they type the first few letters, Then the search bar provides suggestions like \u201caluminum\u201d and \u201caluminum sheet\u201d.",
+      "Given the search engine identifies trending products, When a user clicks the search bar, Then a list of trending products is displayed before the user starts typing.",
+      "Given the user searches for a term that yields no results, When the search is executed, Then the system displays 'No results found. Please check your spelling or try a broader search term'.",
+      "Given the user enters a search term that returns many results, When the search is executed, Then the results page loads in under 2 seconds and allows for faceted filtering."
+    ]
+  },
+  {
+    "module": "User Experience (UX)",
+    "title": "Simplified Single-Page Checkout",
+    "description": "As a customer, I want a simplified single-page checkout process so that I can quickly and easily complete my purchase without unnecessary steps.",
+    "acceptance_criteria": [
+      "Given the user proceeds to checkout with items in their cart, When the checkout page loads, Then all required fields (shipping address, billing address, payment information) are displayed on a single page.",
+      "Given the user has previously saved their shipping and billing information, When the checkout page loads, Then this information is pre-filled and editable.",
+      "Given the user selects a different shipping address than billing address, When they click 'Ship to a different address', Then an additional form appears to enter a separate shipping address.",
+      "Given the user enters an invalid credit card number, When they attempt to submit the order, Then an error message is displayed indicating the card number is invalid.",
+      "Given the user completes all required fields and clicks 'Place Order', When the order is submitted, Then the system displays an order confirmation page with the order number and estimated delivery date."
+    ]
+  },
+  {
+    "module": "User Experience (UX)",
+    "title": "AI-Powered Chatbot for Instant Support",
+    "description": "As a user, I want to be able to use an AI-powered chatbot to get instant answers to my questions so that I can quickly resolve issues and make informed decisions.",
+    "acceptance_criteria": [
+      "Given a user has a question about product specifications, When they type their question in the chatbot, Then the chatbot provides a relevant answer extracted from the Bluebook.",
+      "Given a user asks about order status, When they enter their order number in the chatbot, Then the chatbot displays the current status of their order.",
+      "Given the chatbot does not understand a user\u2019s query, When it cannot find a matching answer, Then the chatbot provides a suggestion to rephrase the question or contact a human support agent.",
+      "Given the user asks a question outside the scope of the chatbot's knowledge, When the chatbot cannot provide a relevant answer, Then the chatbot should offer to connect the user with a live agent.",
+      "Given the chatbot is unavailable due to a system error, When the user attempts to access it, Then a message is displayed indicating 'Chatbot service is temporarily unavailable. Please try again later or contact support'."
+    ]
+  },
+  {
+    "module": "User Experience (UX)",
+    "title": "Accessibility Compliance for Users with Disabilities",
+    "description": "As a user with disabilities, I want the e-commerce portal to be WCAG compliant so that I can easily navigate and use the site with assistive technologies.",
+    "acceptance_criteria": [
+      "Given a user navigates the website using a screen reader, When the screen reader encounters an image, Then the screen reader reads the alt text associated with the image, providing a description of the image\u2019s content.",
+      "Given a user uses keyboard navigation, When they press the 'Tab' key, Then the focus moves to the next interactive element on the page in a logical order.",
+      "Given the user requires high contrast text, When they enable high contrast mode in their operating system, Then the website\u2019s colors adjust to meet the required contrast ratio.",
+      "Given the user is color blind, When the user views charts or graphs, Then the charts and graphs use color-blind-friendly color palettes or patterns to differentiate data.",
+      "Given a user encounters a form field, When the form field is missing a label, Then the screen reader will announce a generic label and provide the user an error message directing to the label that has to be fixed."
+    ]
+  },
+  {
+    "module": "User Experience (UX)",
+    "title": "Optimized Image and Video Compression",
+    "description": "As a user, I want images and videos to load quickly so that I can browse products without waiting for slow-loading media.",
+    "acceptance_criteria": [
+      "Given a user visits a product page with multiple images, When the page loads, Then the images load progressively, starting with a low-resolution version and gradually improving in quality.",
+      "Given a user watches a product video, When the video starts playing, Then the video buffers quickly and plays smoothly without interruptions.",
+      "Given the user accesses the site on a mobile device with limited bandwidth, When the page loads, Then the website automatically serves optimized, lower-resolution images and videos.",
+      "Given a video file is corrupted, When the user tries to load the video, Then the system should display a placeholder with the message 'Video unavailable' and report the error to the administrators.",
+      "Given a user has a slow internet connection, When images load on a product page, Then the loading indicator must show the progress of loading."
+    ]
+  },
+  {
+    "module": "User Experience (UX)",
+    "title": "Saving and Persistence of User Sessions",
+    "description": "As a user, I want my cart and browsing history to be saved even if I close my browser so that I can easily pick up where I left off.",
+    "acceptance_criteria": [
+      "Given a user adds items to their cart and closes the browser without checking out, When they return to the website later, Then the items are still in their cart.",
+      "Given a user browses several product pages and closes the browser, When they return to the website, Then their browsing history is available to easily revisit previously viewed products.",
+      "Given a user logs in and adds items to their cart, When they log out and another user logs in on the same device, Then the second user does not see the first user's cart.",
+      "Given a session expires due to inactivity, When the user tries to navigate to another page, Then the system redirects the user to the login page and clears cart contents.",
+      "Given a user clears their browser cookies, When the user returns to the website, Then their cart is empty, and browsing history is cleared."
+    ]
+  },
+  {
+    "module": "User Experience (UX)",
+    "title": "Customizable Dashboard for B2B Users",
+    "description": "As a B2B user, I want a customizable dashboard so that I can see the information that is most important to me, such as recent orders, carts, and approvals.",
+    "acceptance_criteria": [
+      "Given a B2B user logs into the portal, When the dashboard loads, Then the user sees a personalized view with widgets displaying recent orders, pending approvals, and saved carts.",
+      "Given a B2B user wants to reorder a product they often purchase, When they click on a recent order from their dashboard, Then the order details are displayed with an option to quickly reorder all or selected items.",
+      "Given a B2B user has multiple roles, When they log in, Then the dashboard displays information relevant to their assigned roles and permissions.",
+      "Given the B2B user removes widgets or dashboard features, When the dashboard saves, Then these customized features are reflected upon login.",
+      "Given the user does not have the permission to access certain widgets, When the dashboard loads, Then those widgets are not displayed."
+    ]
+  },
+  {
+    "module": "User Experience (UX)",
+    "title": "Wishlist and Quick Reorder Features",
+    "description": "As a returning customer, I want to be able to save products to a Wishlist and quickly reorder previous purchases so that I can easily manage and repurchase items.",
+    "acceptance_criteria": [
+      "Given a user is logged in and browsing a product page, When they click the 'Add to Wishlist' button, Then the product is added to their Wishlist.",
+      "Given a user has added products to their Wishlist, When they visit the Wishlist page, Then they see a list of all saved products with the option to move them to their cart.",
+      "Given a user has made previous purchases, When they visit their order history page, Then they see an option to quickly reorder all or selected items from a previous order.",
+      "Given the user adds an out-of-stock item to their wishlist, When the user views the wishlist, Then the system displays a notification that the item is out of stock.",
+      "Given a user attempts to add an item to their Wishlist without being logged in, When they click the 'Add to Wishlist' button, Then the system prompts them to log in or create an account."
+    ]
+  }
+]
