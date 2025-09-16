@@ -26,11 +26,10 @@ def run():
     if "current_module_index" not in st.session_state:
         st.session_state.current_module_index = 0
     if "all_stories" not in st.session_state:
-        # Load existing stories if project already has them
-        loaded = project_manager.load_user_stories(project_name)
-    st.session_state.all_stories = [
-           s if isinstance(s, Story) else Story(**s) for s in loaded
-     ] if loaded else []
+        loaded = project_manager.load_user_stories(project_name) or []
+        st.session_state.all_stories = [
+        s if isinstance(s, Story) else Story(**s) for s in loaded
+    ]
     if "pending_batch" not in st.session_state:
         st.session_state.pending_batch = []
     if "parsed_text" not in st.session_state:
