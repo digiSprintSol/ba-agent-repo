@@ -4,5 +4,6 @@ dotenv
 pandas
 openpyxl
 python-docx
+json5
 pdfplumber
 google-generativeai
